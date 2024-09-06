@@ -1,0 +1,22 @@
+/* BASIC STYLES HERE */
+.profile-picture {
+  height: 200px;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.profile-picture.profile-picture-sm {
+  height: 64px;
+}
+
+body {
+  background-size: cover;
+  color: whitesmoke;
+  background-color: black;
+}
+
+main {
+  font-weight: 600;
+  text-shadow: 1px 1px 2px black;
+}
