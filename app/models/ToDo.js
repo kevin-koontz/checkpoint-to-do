@@ -11,9 +11,11 @@ export class ToDo {
 
   get quoteHTMLTemplate() {
     return /*html*/ `
-    <div>
-        <p>"Would you like a cookie?"</p>
-        <p>-The Oracle</p>
+    <div class="fs-3">
+        <span>"Would you like a cookie?"</span>
+    </div>
+    <div class="fs-6 text-end">
+        <span>-The Oracle</span>
     </div>
   `
   }

@@ -16,15 +16,23 @@ body {
   background-color: black;
 }
 
-main {
+main,
+footer,
+header {
   font-weight: 600;
   text-shadow: 1px 1px 2px black;
 }
 
 .info-bar {
   background-color: rgba(0, 0, 0, .3);
-  border-radius: 25px;
-  backdrop-filter: blur(2px);
-  margin: 100px;
-
+  border-radius: 50px;
+  backdrop-filter: blur(3px);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-bottom: 75px;
+  margin-top: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
 }
