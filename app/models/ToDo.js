@@ -18,12 +18,13 @@ export class ToDo {
       <div class="fs-6 text-end">
         <span>-The Oracle</span>
       </div>
+    </div>
   `
   }
 
   get todoHTMLTemplate() {
     return /*html*/ `
-    <div class="d-flex">
+    <div>
         <span>></span>
         <span>3 Todos remaining</span>
     </div>
