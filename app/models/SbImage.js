@@ -1,6 +1,9 @@
 //CREATE MODEL + CONTROLLER + SERVICE => IMAGE + QUOTES + TODO + WEATHER
 //IMAGE COMPLETED => UPDATE MODEL/CONTROLLER/SERVICE from SandboxImageX to ImageX / ToDo => Image
-//NOTE - Sandbox => api/images
+
+
+
+//NOTE - Sandbox => api/images => id="image-of-the-day" + id="image-copyright"
 export class SbImage {
 
   constructor(data) {
@@ -12,25 +15,16 @@ export class SbImage {
 
   }
 
-  get quoteHTMLTemplate() {
-    return /*html*/ `
-    <div>
-      <div class="fs-3">
-        <span>"Would you like a cookie?"</span>
-      </div>
-      <div class="fs-6 text-end">
-        <span>-The Oracle</span>
-      </div>
-    </div>
-  `
+  get imageHTMLTemplate() {
+    return ` `
   }
 
-  get todoHTMLTemplate() {
-    return /*html*/ `
-    <div>
-        <span>></span>
-        <span>3 Todos remaining</span>
-    </div>
-    `
-  }
+  // get todoHTMLTemplate() {
+  //   return /*html*/ `
+  //   <div>
+  //       <span>></span>
+  //       <span>3 Todos remaining</span>
+  //   </div>
+  //   `
+  // }
 }

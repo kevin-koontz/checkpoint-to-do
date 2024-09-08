@@ -1,4 +1,5 @@
 import { SbImage } from "./models/SbImage.js"
+import { SbQuote } from "./models/SbQuote.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -10,6 +11,9 @@ class ObservableAppState extends EventEmitter {
 
   /**@type {SbImage} */
   image = null
+
+  /**@type {SbQuote} */
+  quote = null
 
 }
 
