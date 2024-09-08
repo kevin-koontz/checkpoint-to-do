@@ -1,14 +1,14 @@
 import { AppState } from "../AppState.js";
-import { ToDo } from "../models/ToDo.js";
+import { SbImage } from "../models/SbImage.js";
 import { api } from "./AxiosService.js";
 
-class SandboxImagesService {
+class SbImagesService {
 
-  async getSandboxImage() {
+  async getSbImages() {
     const response = await api.get('api/images')
     console.log('GOT IMAGES 🖼️', response.data);
 
-    const newImage = new ToDo(response.data)
+    const newImage = new SbImage(response.data)
     AppState.image = newImage
 
   }
@@ -16,4 +16,4 @@ class SandboxImagesService {
 
 }
 
-export const sandboxImageService = new SandboxImagesService()
+export const sbImagesService = new SbImagesService()

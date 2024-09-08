@@ -1,7 +1,7 @@
 //CREATE MODEL + CONTROLLER + SERVICE => IMAGE + QUOTES + TODO + WEATHER
 //IMAGE COMPLETED => UPDATE MODEL/CONTROLLER/SERVICE from SandboxImageX to ImageX / ToDo => Image
-
-export class ToDo {
+//NOTE - Sandbox => api/images
+export class SbImage {
 
   constructor(data) {
     this.url = data.url

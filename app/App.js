@@ -1,5 +1,5 @@
 import { AuthController } from './controllers/AuthController.js';
-import { SandboxImagesController } from "./controllers/SandboxImageController.js";
+import { SbImagesController } from "./controllers/SbImageController.js";
 import { router } from './router-config.js';
 const USE_ROUTER = false
 
@@ -7,7 +7,7 @@ class App {
 
   AuthController = new AuthController()
 
-  SandboxImageController = new SandboxImagesController()
+  SbImagesController = new SbImagesController()
 
   constructor() {
     if (USE_ROUTER) {
