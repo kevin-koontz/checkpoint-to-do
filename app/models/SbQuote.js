@@ -14,12 +14,12 @@ export class SbQuote {
 
   get quoteHTMLTemplate() {
     return `
-    <div>
+    <div class="magic-text">
       <div class="fs-3 text-center">
         <span>"${this.content}"</span>
       </div>
       <div class="fs-6 text-center">
-        <span>-${this.author}</span>
+        <span class="secret-text">-${this.author}</span>
       </div>
     </div>
   `

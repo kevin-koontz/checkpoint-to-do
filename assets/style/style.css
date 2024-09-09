@@ -13,7 +13,6 @@
 body {
   background-size: cover;
   color: whitesmoke;
-  background-color: black;
 }
 
 main,
@@ -22,6 +21,33 @@ header {
   font-weight: 600;
   text-shadow: 1px 1px 2px black;
 }
+
+.magic-text {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 50px;
+  transition: all 1s;
+}
+
+.secret-text {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.magic-text:hover {
+  background: rgba(0, 0, 0, .3);
+  backdrop-filter: blur(5px);
+}
+
+.magic-text:hover .secret-text {
+  opacity: unset;
+}
+
+
+
+
 
 .info-bar {
   background-color: rgba(0, 0, 0, .3);
