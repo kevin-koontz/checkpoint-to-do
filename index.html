@@ -17,64 +17,99 @@
 
 <body>
   <!-- SECTION -->
-  <header>
+  <header class="container-fluid">
 
-    <div class="p-2">
-      <small><span id="image-copyright" class="no-select"></span></small>
-    </div>
+    <section class="row">
+      <div class="d-flex justify-content-between">
+
+        <div class="col-md-4 py-2 my-2">
+          <small>Image by <span id="image-copyright" class="fw-bold no-select"></span></small>
+        </div>
+
+
+        <div class="col-md-2">
+          <button class="btn todo-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark"
+            aria-controls="offcanvasDark">
+            <div>
+              <span class="carrot-style">></span>
+              <span>3 Todos remaining</span>
+            </div>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDark"
+      aria-labelledby="offcanvasDarkLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkLabel"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body user-todo-style">
+        <div class="d-flex m-2">
+          <form action="">
+            <input class="input-style me-2" type="text">
+          </form>
+          <button class="btn btn-outline-light ms-2 mdi mdi-plus-thick">SAVE</button>
+        </div>
+        <div id="user-todos" class="d-flex justify-content-between fs-5">
+          <!-- STUB userToDoListHTMLTemplate -->
+          <!-- <div class="m-2">
+            <input type="checkbox">
+            <span class="px-1">USER TODO #2</span>
+          </div>
+          <div>
+            <span class="mdi mdi-delete-forever user-todo-delete"></span>
+          </div> -->
+        </div>
+      </div>
 
   </header>
 
   <!-- SECTION -->
   <main class="container-fluid d-flex justify-content-center align-items-end">
     <section class="row">
-      <div id="image-of-the-day">
-        <!-- STUB - bg image template ^ -->
-      </div>
+      <div class="col-md-12">
 
-      <div id="quote-of-the-day">
-        <!-- STUB - quote template ^ -->
-      </div>
+        <div id="image-of-the-day">
+          <!-- STUB - bg image template ^ -->
+        </div>
 
-      <div id="todo-list">
-        <!-- STUB - todo template ^ -->
-      </div>
+        <div id="quote-of-the-day">
+          <!-- STUB - quote template ^ -->
+        </div>
 
+        <div id="todo-list">
+          <!-- STUB - todo template ^ -->
+        </div>
+
+      </div>
     </section>
-
-    <div class="offcanvas offcanvas-end hidden" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements
-        here.
-      </div>
-    </div>
-
-
-
-
-
   </main>
 
   <!-- SECTION -->
-  <footer>
+  <footer class="container-fluid">
+    <section class="row">
+      <div class="col-md-12">
 
-    <div class="info-bar">
-      <div class=" fs-1 justify-content-between align-items-center d-flex">
-        <div class="no-select">26°C</div>
-        <div id="user-time" class="no-select"></div>
-        <!-- STUB - date template ^ -->
-        <div class="fs-6 justify-content-end align-items-center d-flex" id="authstate"></div>
+        <div class="info-bar">
+          <div class=" fs-1 justify-content-between align-items-center d-flex">
+            <div class="no-select">26°C</div>
+            <div id="user-time" class="no-select"></div>
+            <!-- STUB - date template ^ -->
+            <div class="fs-6 justify-content-end align-items-center d-flex" id="authstate"></div>
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <div class=" bg-dark text-light flex-grow-1 justify-content-center align-items-center d-flex no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
-    </div>
+      <div class=" bg-dark text-light flex-grow-1 justify-content-center align-items-center d-flex no-select">
+        <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+      </div>
 
+    </section>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -25,7 +25,7 @@ export class SbImagesController {
     setHTML('image-of-the-day', image.imageHTMLTemplate)
     document.body.style.backgroundImage = `url(${image.largeImgUrl})`
     //NOTE - draw large image from api to background ^
-    setHTML('image-copyright', `Image by ${image.author}`)
+    setHTML('image-copyright', `${image.author}`)
     //NOTE - draw image author from api ^
   }
 }
