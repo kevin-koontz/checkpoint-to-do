@@ -24,7 +24,7 @@ class ObservableAppState extends EventEmitter {
   todo = []
 
   /**@type {UserToDo[]} */
-  myToDo = []
+  myToDos = []
 
   //confused if toDo is single object or array
   // /**@type {UserToDo} */

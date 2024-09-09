@@ -7,8 +7,8 @@ class UserToDosService {
     // const toDoSave = AppState.todo
     const response = await api.post('api/todos', AppState.todo)
     console.log('SAVED TODO 💾📃', response.data);
-    // const newToDo = new UserToDo(response.data)
-    // AppState.todo = newToDo
+    const newToDo = new UserToDo(response.data)
+    AppState.myToDos = newToDo
 
   }
 
@@ -17,7 +17,7 @@ class UserToDosService {
     console.log('GOT TODO 📃', response.data);
     const toDo = response.data.map(toDoData => new UserToDo(toDoData))
     AppState.todo = toDo
-    console.log('todos', AppState.myToDo);
+    console.log('todos', AppState.myToDos);
 
   }
 
