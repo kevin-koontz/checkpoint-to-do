@@ -1,6 +1,7 @@
 import { SbImage } from "./models/SbImage.js"
 import { SbQuote } from "./models/SbQuote.js"
 import { UserDateTime } from "./models/UserDateTime.js"
+import { UserToDo } from "./models/UserToDo.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -19,7 +20,8 @@ class ObservableAppState extends EventEmitter {
   /**@type {UserDateTime} */
   date = null
 
-  todo
+  /**@type {UserToDo[]} */
+  todo = []
 
 }
 

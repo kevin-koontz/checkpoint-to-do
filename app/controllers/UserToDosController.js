@@ -7,7 +7,7 @@ export class UserToDosController {
 
   constructor() {
     console.log('📃🎮');
-    this.getUserToDo()
+    AppState.on('user', this.getUserToDo)
   }
 
   async getUserToDo() {
