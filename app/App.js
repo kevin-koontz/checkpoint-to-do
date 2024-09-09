@@ -1,6 +1,7 @@
 import { AuthController } from './controllers/AuthController.js';
 import { SbImagesController } from "./controllers/SbImageController.js";
 import { SbQuotesController } from "./controllers/SbQuotesController.js";
+import { UserDatesTimesController } from "./controllers/UserDatesTimesController.js";
 import { router } from './router-config.js';
 const USE_ROUTER = false
 
@@ -11,6 +12,8 @@ class App {
   SbImagesController = new SbImagesController()
 
   SbQuotesController = new SbQuotesController()
+
+  UserDatesTimesController = new UserDatesTimesController()
 
 
 
