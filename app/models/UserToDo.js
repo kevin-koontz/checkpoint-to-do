@@ -13,13 +13,15 @@ export class UserToDo {
 
   get userToDosHTMLTemplate() {
     return `
+      <div class="d-flex justify-content-between fs-5">
         <div class="m-2">
           <input type="checkbox">
           <span class="px-1">${this.description}</span>
         </div>
-        <div>
+        <div class="mt-2">
           <span onclick="app.UserToDoController.deleteToDo()" class="mdi mdi-delete-forever user-todo-delete"></span>
         </div>
+      </div>
     `
   }
 }

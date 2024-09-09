@@ -25,4 +25,5 @@ export class SbQuotesController {
     setHTML('quote-of-the-day', quote.quoteHTMLTemplate)
   }
 
+
 }

@@ -23,6 +23,14 @@ class ObservableAppState extends EventEmitter {
   /**@type {UserToDo[]} */
   todo = []
 
+  /**@type {UserToDo[]} */
+  myToDo = []
+
+  //confused if toDo is single object or array
+  // /**@type {UserToDo} */
+
+  // todo = null
+
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

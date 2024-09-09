@@ -23,6 +23,14 @@ export class UserToDosController {
     }
   }
 
+  //confused if toDo is single object or array
+  // drawUserToDo() {
+  //   const userToDo = AppState.todo
+  //   // let userToDoHTML = ''
+  //   // userToDo.forEach(todo => userToDoHTML += todo.userToDosHTMLTemplate)
+  //   setHTML('user-todos', userToDo.userToDosHTMLTemplate)
+  // }
+
   drawUserToDo() {
     const userToDo = AppState.todo
     let userToDoHTML = ''
@@ -34,7 +42,7 @@ export class UserToDosController {
     event.preventDefault()
     console.log('CREATE TODO 📃');
     const toDoForm = event.target
-    const toDoFormData = this.getFormData(toDoForm)
+    const toDoFormData = getFormData(toDoForm)
     console.log('FORM DATA', toDoFormData);
 
     userToDosService.createToDo(toDoFormData)
