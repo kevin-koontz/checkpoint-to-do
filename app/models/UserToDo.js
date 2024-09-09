@@ -18,7 +18,7 @@ export class UserToDo {
           <span class="px-1">${this.description}</span>
         </div>
         <div>
-          <span class="mdi mdi-delete-forever user-todo-delete"></span>
+          <span onclick="app.UserToDoController.deleteToDo()" class="mdi mdi-delete-forever user-todo-delete"></span>
         </div>
     `
   }

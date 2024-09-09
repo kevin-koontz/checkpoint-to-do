@@ -49,10 +49,10 @@
       </div>
       <div class="offcanvas-body user-todo-style">
         <div class="d-flex m-2">
-          <form action="">
+          <form onsubmit="app.UserToDosController.createToDo()">
             <input class="input-style me-2" type="text">
+            <button class="btn btn-outline-light ms-2 mdi mdi-plus-thick">SAVE</button>
           </form>
-          <button class="btn btn-outline-light ms-2 mdi mdi-plus-thick">SAVE</button>
         </div>
         <div id="user-todos" class="d-flex justify-content-between fs-5">
           <!-- STUB userToDoListHTMLTemplate -->
