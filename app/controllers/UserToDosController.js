@@ -23,20 +23,14 @@ export class UserToDosController {
     }
   }
 
-  //confused if toDo is single object or array
-  // drawUserToDo() {
-  //   const userToDo = AppState.todo
-
-  //   // let userToDoHTML = ''
-  //   // userToDo.forEach(todo => userToDoHTML += todo.userToDosHTMLTemplate)
-  //   setHTML('user-todos', userToDo.userToDosHTMLTemplate)
-  // }
-
   drawUserToDos() {
     const userToDo = AppState.myToDos
     let userToDoHTML = ''
     userToDo.forEach(todo => userToDoHTML += todo.userToDosHTMLTemplate)
     setHTML('user-todos', userToDoHTML)
+
+    const completedToDos = userToDo.filter(todo => todo.completed)
+    setHTML('todo-count', `${completedToDos.length}`)
   }
 
   async createToDo() {
@@ -68,10 +62,10 @@ export class UserToDosController {
     }
   }
 
-  async updateToDo() {
-    console.log('SAVE TODO',);
+  async updateToDos(myToDosId) {
+    console.log('updated todo', myToDosId);
     try {
-      await userToDosService.editToDo()
+      await userToDosService.updateToDos(myToDosId)
     } catch (error) {
       Pop.error(error)
       console.error(error)

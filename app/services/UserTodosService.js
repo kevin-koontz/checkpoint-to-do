@@ -4,6 +4,21 @@ import { Pop } from "../utils/Pop.js";
 import { api } from "./AxiosService.js";
 
 class UserToDosService {
+  async updateToDos(myToDosId) {
+    const toDos = AppState.myToDos
+
+    const toDoIndex = toDos.findIndex(toDo => toDo.id == myToDosId)
+    const toDo = toDos[toDoIndex]
+
+    const myToDosData = { completed: !toDo.completed }
+
+    const response = await api.put(`api/todos/${myToDosId}`, myToDosData)
+    console.log('updated todo', response.data);
+
+    const updateToDos = new UserToDo(response.data)
+
+    toDos.splice(toDoIndex, 1, updateToDos)
+  }
   async deleteToDo(myToDosId) {
     const response = await api.delete(`api/todos/${myToDosId}`)
     console.log('DELETED TODO ❌', response.data);

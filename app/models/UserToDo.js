@@ -5,17 +5,17 @@ export class UserToDo {
 
   constructor(data) {
     this.id = data.id
-    this.completed = data.completed
+    this.completed = data.completed || false
     this.description = data.description
     this.creatorId = data.creatorId
   }
 
 
   get userToDosHTMLTemplate() {
-    return /*html*/ `
+    return `
       <div class="d-flex justify-content-between fs-5">
         <div class="m-2">
-          <input type="checkbox">
+          <input onchange="app.UserToDosController.updateToDos('${this.id}')" type="checkbox" ${this.completed ? 'checked' : ''}>
           <span class="px-1">${this.description}</span>
         </div>
         <div class="mt-2">
