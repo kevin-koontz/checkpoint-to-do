@@ -10,13 +10,13 @@ export class UserToDosController {
 
   constructor() {
     console.log('📃🎮');
-    AppState.on('user', this.getUserToDo)
-    AppState.on('todo', this.drawUserToDo)
+    AppState.on('user', this.getUserToDos)
+    AppState.on('myToDos', this.drawUserToDos)
   }
 
-  async getUserToDo() {
+  async getUserToDos() {
     try {
-      await userToDosService.getUserToDo()
+      await userToDosService.getUserToDos()
     } catch (error) {
       Pop.error(error)
       console.error(error)
@@ -26,33 +26,52 @@ export class UserToDosController {
   //confused if toDo is single object or array
   // drawUserToDo() {
   //   const userToDo = AppState.todo
+
   //   // let userToDoHTML = ''
   //   // userToDo.forEach(todo => userToDoHTML += todo.userToDosHTMLTemplate)
   //   setHTML('user-todos', userToDo.userToDosHTMLTemplate)
   // }
 
-  drawUserToDo() {
-    const userToDo = AppState.todo
+  drawUserToDos() {
+    const userToDo = AppState.myToDos
     let userToDoHTML = ''
     userToDo.forEach(todo => userToDoHTML += todo.userToDosHTMLTemplate)
     setHTML('user-todos', userToDoHTML)
   }
 
-  createToDo() {
-    event.preventDefault()
-    console.log('CREATE TODO 📃');
-    const toDoForm = event.target
-    const toDoFormData = getFormData(toDoForm)
-    console.log('FORM DATA', toDoFormData);
+  async createToDo() {
+    try {
+      event.preventDefault()
+      console.log('CREATE TODO 📃');
+      const toDoForm = event.target
+      const toDoFormData = getFormData(toDoForm)
+      console.log('FORM DATA', toDoFormData);
 
-    userToDosService.createToDo(toDoFormData)
+      await userToDosService.createToDo(toDoFormData)
 
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  async saveToDo() {
+  async deleteToDo(myToDosId) {
+    try {
+      const toDoDelete = await Pop.confirm("Are you sure you would like to delete this ToDo?")
+
+      if (!toDoDelete) return
+
+      await userToDosService.deleteToDo(myToDosId)
+
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
+    }
+  }
+
+  async updateToDo() {
     console.log('SAVE TODO',);
     try {
-      await userToDosService.saveToDo()
+      await userToDosService.editToDo()
     } catch (error) {
       Pop.error(error)
       console.error(error)

@@ -1,40 +1,39 @@
 import { AppState } from "../AppState.js";
 import { UserToDo } from "../models/UserToDo.js";
+import { Pop } from "../utils/Pop.js";
 import { api } from "./AxiosService.js";
 
 class UserToDosService {
-  async saveToDo() {
-    // const toDoSave = AppState.todo
-    const response = await api.post('api/todos', AppState.todo)
-    console.log('SAVED TODO 💾📃', response.data);
-    const newToDo = new UserToDo(response.data)
-    AppState.myToDos = newToDo
+  async deleteToDo(myToDosId) {
+    const response = await api.delete(`api/todos/${myToDosId}`)
+    console.log('DELETED TODO ❌', response.data);
+
+    const toDoIndex = AppState.myToDos.findIndex(todo => myToDosId.id == myToDosId)
+    AppState.myToDos.splice(toDoIndex, 1)
+  }
+
+
+
+  // STUB Edit the todo with a put request
+  async editToDo() {
+    // Reference spellbook
 
   }
 
-  async getUserToDo() {
+  async getUserToDos() {
     const response = await api.get('api/todos')
     console.log('GOT TODO 📃', response.data);
-    const toDo = response.data.map(toDoData => new UserToDo(toDoData))
-    AppState.todo = toDo
+    const toDos = response.data.map(toDoData => new UserToDo(toDoData))
+    AppState.myToDos = toDos
     console.log('todos', AppState.myToDos);
 
   }
 
-  //confused if toDo is single object or array
-  // async getUserToDo() {
-  //   const response = await api.get('api/todos')
-  //   console.log('GOT TODO 📃', response.data);
-  //   const newToDo = new UserToDo(response.data)
-  //   AppState.todo = newToDo
-  // }
-
-  createToDo(toDoFormData) {
-    const toDo = AppState.todo
-    const newToDo = new UserToDo(toDoFormData)
-    toDo.push(newToDo)
-
-    this.saveToDo()
+  // FIXME
+  async createToDo(toDoFormData) {
+    const response = await api.post('api/todos', toDoFormData)
+    const newToDo = new UserToDo(response.data)
+    AppState.myToDos.push(newToDo)
   }
 
 }
